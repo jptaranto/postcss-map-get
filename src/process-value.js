@@ -12,6 +12,8 @@ function getKeyFromMapString(mapString, keyParameter) {
   const keyValue = keyParameter.replace(/\s/g, '');
   // remove open and close parenthesis from the map string
   mapString = mapString.slice(1, -1);
+  // remove all whitespace and line breaks from the map string
+  mapString = mapString.replace(/\s/g, '').replace(/(\r\n|\n|\r)/gm, '');
 
   let isParsingKey = true;
   let hasFinishedParsingValue = false;
